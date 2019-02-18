@@ -1,23 +1,21 @@
 package simulator;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+public class Main{
+    private static boolean CLOCK_STATE;
+    private static final String FILE_PATH  = "src/simulator/Machine.machine";
 
-public class Main extends Application {
+    public static void main(String[] args){
+        InstructionMemory instructionMemory = new InstructionMemory(FILE_PATH);
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
+        /*
+        while(true){
+            CLOCK_STATE = !CLOCK_STATE;
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException e){}
 
-
-    public static void main(String[] args) {
-        launch(args);
+            System.out.println(CLOCK_STATE);
+        }
+        */
     }
 }
